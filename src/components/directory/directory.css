@@ -1,0 +1,10 @@
+.directory{
+    /* background-color: cadetblue; */
+    display: flex;
+    width: 95%;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
