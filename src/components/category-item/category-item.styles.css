@@ -10,20 +10,39 @@
     border: 1px solid black;
   }
   .category-body-container{
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.7);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 0.25em 0.25em;
+    height: 150px;
+    width: 150px;
+    text-align: center;
   }
   
   .category-container:nth-child(4), .category-container:nth-child(5){
-    width: 48%;
+    width: 48.5%;
     height: 350px;
   }
   
   .category-container:hover{
     cursor: pointer;
     transform: scale(1.08);
+  }
+
+  .category-body-container:hover{
+    background-color: rgba(255, 255, 255, 0.9);
+  }
+
+  @media (max-width: 500px){
+    .category-container{
+      width: 95%;
+      
+    }
+    .category-container:nth-child(4), .category-container:nth-child(5){
+      width: 95%;
+      
+    }
+    
   }
