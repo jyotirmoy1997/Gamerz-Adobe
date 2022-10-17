@@ -2,8 +2,8 @@ import { initializeApp } from "firebase/app";
 import {
   getAuth, 
   signInWithPopup, 
-  signInWithRedirect, 
-  GoogleAuthProvider
+  GoogleAuthProvider,
+  createUserWithEmailAndPassword
 } from "firebase/auth";
 import {
   getFirestore, 
@@ -33,11 +33,12 @@ provider.setCustomParameters({prompt : "select_account"})
 export const auth = getAuth();
 export const signInWithGooglePopup = () => signInWithPopup(auth, provider)
 
+
 // 4. Setting Up our database
 export const db = getFirestore();
 
 // 5. Creating an user reference in database from Authentication Token
-export const createUserFromAuth = async (userAuth) => {
+export const createUserFromAuth = async (userAuth, additionalInfo={}) => {
 
   console.log(userAuth);
   /* Asking the database about providing the info about the user with authentication id : uid
@@ -59,7 +60,8 @@ export const createUserFromAuth = async (userAuth) => {
       await setDoc(userDocRef, {
         displayName,
         email,
-        createdAt
+        createdAt,
+        ...additionalInfo
       })
     }
     catch(error){
@@ -67,4 +69,12 @@ export const createUserFromAuth = async (userAuth) => {
     }
     return userDocRef;
   }
+}
+
+
+// Creating authentication of user using email and password
+export const createAuthUserWithEmailandPassword = async (email, password) => 
+{
+  if(!password || !email) return;
+  return await createUserWithEmailAndPassword(auth, email, password);
 }
