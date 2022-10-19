@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { createAuthUserWithEmailandPassword, createUserFromAuth } from "../../utils/firebase/firebase.utils";
+import './sign-up-form.component.css';
 
 const defaultFormField = {
     displayName : "",
@@ -52,23 +53,25 @@ const SignUpForm = () => {
 
     }
 
-    console.log(displayName, email, password, confirm_password)
+    // console.log(displayName, email, password, confirm_password)
     return(
         <div>
-            <form onSubmit={handleSubmit} action="">
-                <label htmlFor="">Name</label>
-                <input type="text" name="displayName" id="" onChange={handleChange} value={displayName} required />
+            <form className="wrapper-signup" onSubmit={handleSubmit} action="">
+                <div className="it1">I do not have an account</div>
+                <div className="it2">Sign-Up with your email and password</div>
+                <label className="it3" htmlFor="">Name</label>
+                <input className="it4" type="text" name="displayName" id="" onChange={handleChange} value={displayName} required />
 
-                <label htmlFor="">Email</label>
-                <input type="email" name="email" id="" onChange={handleChange} value={email} required />
+                <label className="it5" htmlFor="">Email</label>
+                <input className="it6" type="email" name="email" id="" onChange={handleChange} value={email} required />
 
-                <label htmlFor="">Password</label>
-                <input type="password" name="password" id="" onChange={handleChange} value={password} required />
+                <label className="it7" htmlFor="">Password</label>
+                <input className="it8" type="password" name="password" id="" onChange={handleChange} value={password} required />
 
-                <label htmlFor="">Confirm Password</label>
-                <input type="password" name="confirm_password" id="" onChange={handleChange} value={confirm_password} required />
+                <label className="it9" htmlFor="">Confirm Password</label>
+                <input className="it10" type="password" name="confirm_password" id="" onChange={handleChange} value={confirm_password} required />
 
-                <button>Sign-Up</button>
+                <button className="it11" >Sign-Up</button>
             </form>
         </div>
     )

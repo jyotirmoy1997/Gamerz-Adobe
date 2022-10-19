@@ -1,0 +1,14 @@
+.outer{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 3em;
+}
+
+@media (max-width: 870px){
+    .outer{
+        flex-direction: column;
+        justify-content: space-between;
+        /* width: 100%; */
+    }
+
+}

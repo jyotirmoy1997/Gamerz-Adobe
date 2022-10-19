@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap');
+
+.wrapper-sign-in{
+    /* background-color: burlywood; */
+    max-width: 450px;
+    width: 100%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+    height: 350px;
+    grid-gap: 10px;
+}
+
+.el1, .el2, .el3, .el4, .el5, .el6{
+    grid-column: 1/-1;
+}
+
+.el1{
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 2.5em;;
+}
+
+.el2{
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 1.25em;
+}
+.el3, .el5{
+    font-weight: bold;
+}
+.el7, .el8{
+    grid-row: 8/9;
+    margin-top: -30px;
+    margin-bottom: 20px;
+}
+
+.el4, .el6{
+    /* border-radius: 5px; */
+    height: 30px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 0.25px solid gray;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.el4:focus, .el6:focus{
+    background-color:#c0cfff;
+    outline: none;
+    border-bottom: 0.5px solid black;
+}
+
+.el8{
+    box-shadow: none;
+}
+
+.el7{
+    background-color: black;
+    color: white;
+    border-radius: 2px;
+    font-family: 'Saira', sans-serif;
+    text-transform: uppercase;
+    font-size: 15px;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2)
+}
+
+.el7:hover{
+    background-color: #303f9f;
+    cursor: pointer;
+}
