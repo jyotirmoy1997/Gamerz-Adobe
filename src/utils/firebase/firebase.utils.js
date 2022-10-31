@@ -38,7 +38,7 @@ export const signInWithGooglePopup = () => signInWithPopup(auth, provider)
 // 4. Setting Up our database
 export const db = getFirestore();
 
-// 5. Creating an user reference in database from Authentication Token
+// 5. Creating a user reference in database from Authentication Token
 export const createUserFromAuth = async (userAuth, additionalInfo={}) => {
 
   console.log(userAuth);

@@ -1,15 +1,16 @@
 import {Outlet, Link} from 'react-router-dom';
 import { Fragment} from 'react';
-import {ReactComponent as Logo} from '../../assets/logo.svg';
+// import {ReactComponent as Logo} from '../../assets/logo.svg';
 import './navigation.styles.css';
 const CartLogo = require('../../assets/cart-icon.png')
+const Logo = require('../../assets/LOGO.png')
 
 const Navigation = () => {
     return (
     <Fragment>
       <div className='navigation'>
         <Link className="logo-container" to="/">
-            <Logo id='logo'/>
+            <img src={Logo} alt="" srcset="" height={100} width={262} />
         </Link>
         <div className='nav-links-container'>
             <Link className="nav-link" to="/shop">
