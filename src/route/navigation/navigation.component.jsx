@@ -1,11 +1,21 @@
 import {Outlet, Link} from 'react-router-dom';
-import { Fragment} from 'react';
+import { Fragment, useContext} from 'react';
 // import {ReactComponent as Logo} from '../../assets/logo.svg';
 import './navigation.styles.css';
+import { UserContext } from '../../contexts/user.context';
+import { signOutUser } from '../../utils/firebase/firebase.utils';
 const CartLogo = require('../../assets/cart-icon.png')
 const Logo = require('../../assets/LOGO.png')
 
+
 const Navigation = () => {
+    const {currentUser, setCurrentUser} = useContext(UserContext)
+    console.log(currentUser)
+
+    const signOutHandler = async () => {
+        const res = await signOutUser();
+        setCurrentUser(null);
+    }
     return (
     <Fragment>
       <div className='navigation'>
@@ -19,9 +29,16 @@ const Navigation = () => {
             <Link className="nav-link" to="/contact">
                 Contact
             </Link>
-            <Link className="nav-link" to="/sign-in">
-                Sign In
-            </Link>
+            {
+                (currentUser) ? 
+                (<Link className="nav-link" to="/sign-in" onClick={signOutHandler}>
+                    Sign Out
+                </Link>) : 
+                (<Link className="nav-link" to="/sign-in">
+                    Sign In
+                </Link>)
+            }
+            
             <Link className="nav-link" to="/cart">
                 <img src={CartLogo} alt="" height={30} width={30} />
             </Link>

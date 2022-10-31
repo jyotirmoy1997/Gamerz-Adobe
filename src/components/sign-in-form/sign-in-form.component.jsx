@@ -1,6 +1,5 @@
-import {Outlet, Link} from 'react-router-dom';
-import { Fragment} from 'react';
-
+import { useState, useContext } from "react";
+import { UserContext } from "../../contexts/user.context";
 import { 
     signInWithGooglePopup, 
     createUserFromAuth ,
@@ -9,7 +8,7 @@ import {
 
 import './sign-in-form.component.css'
 import GoogleButton from 'react-google-button'
-import { useState } from "react";
+
 
 const defaultFormField = {
     email : "",
@@ -21,6 +20,9 @@ const SignIn = () => {
         const {user} = await signInWithGooglePopup();
         const userDocRef = await createUserFromAuth(user);
     }
+    // console.log(UserProvider)
+
+    const {setCurrentUser} = useContext(UserContext)
 
     // Here, we're using the useState Hook to update the Different Form Fields
     const [formFields, setFormFields] = useState(defaultFormField);
@@ -41,7 +43,8 @@ const SignIn = () => {
         event.preventDefault();
         try{
             const {user} = await signInAuthUserWithEmailandPassword(email, password);
-            console.log(user);
+            // console.log(user);
+            // setCurrentUser(user)
             resetFormField();
             // console.log(user);
         }
