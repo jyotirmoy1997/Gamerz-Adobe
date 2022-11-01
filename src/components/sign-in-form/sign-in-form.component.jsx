@@ -8,6 +8,9 @@ import {
 
 import './sign-in-form.component.css'
 import GoogleButton from 'react-google-button'
+import {useNavigate} from "react-router-dom";
+
+
 
 
 const defaultFormField = {
@@ -21,7 +24,7 @@ const SignIn = () => {
         const userDocRef = await createUserFromAuth(user);
     }
     // console.log(UserProvider)
-
+    const navigate = useNavigate();
     const {setCurrentUser} = useContext(UserContext)
 
     // Here, we're using the useState Hook to update the Different Form Fields
@@ -39,7 +42,9 @@ const SignIn = () => {
         setFormFields({...formFields, [name]: value}); // Spread Operator is used to Change only the field that is invoking the function
     }
 
-    const handleSubmit = async (event) => {
+    const handleSubmit = async (event) => 
+    {
+        let flag = true;
         event.preventDefault();
         try{
             const {user} = await signInAuthUserWithEmailandPassword(email, password);
@@ -48,7 +53,8 @@ const SignIn = () => {
             resetFormField();
             // console.log(user);
         }
-        catch(err){
+        catch(err)
+        {
             if(err.code === 'auth/user-not-found')
             {
                 alert("User Not Found")
@@ -59,8 +65,13 @@ const SignIn = () => {
             else{
                 console.log(err);
             }
+            flag = false
             
         }
+        if(flag){
+            navigate('/')
+        }
+
 
     }
     return(
@@ -72,6 +83,7 @@ const SignIn = () => {
                 <input className="el4" type="email" name="email" onChange={handleChange} value={email} required />
                 <div className="el5">Password</div>
                 <input className="el6" type="password" name="password" onChange={handleChange} value={password} required />
+                
                 <button className="el7">Sign-In</button>
                 <GoogleButton className="el8" onClick={logGoogleUser} />
             </form>

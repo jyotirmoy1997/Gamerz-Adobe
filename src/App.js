@@ -3,12 +3,16 @@ import Home from './route/home/home.component';
 import Navigation from './route/navigation/navigation.component';
 import SignInPage from './route/sign-in/sign-in-page.component';
 import Cart from './route/cart/cart.component';
+import Shop from './route/shop/shop.component';
+import Contact from './route/contact/contact.component';
 
 const App = () => {
   return (
     <Routes>
       <Route path='/' element={<Navigation/>}>
         <Route index={true} element={<Home/>}/>
+        <Route path='/shop' element={<Shop/>}/>
+        <Route path='/contact' element={<Contact/>}/>
         <Route path='/sign-in' element={<SignInPage/>}/>
         <Route path='/cart' element={<Cart/>}/>
       </Route>
