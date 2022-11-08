@@ -1,0 +1,8 @@
+.shop-container{
+    display: grid;
+    width: 90%;
+    margin: 0 auto;
+    grid-template-columns: repeat(4, 1fr);
+    /* grid-template-rows: ; */
+    grid-gap: 50px;
+}

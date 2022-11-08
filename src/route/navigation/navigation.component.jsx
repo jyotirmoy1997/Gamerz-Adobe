@@ -4,7 +4,8 @@ import { Fragment, useContext} from 'react';
 import './navigation.styles.css';
 import { UserContext } from '../../contexts/user.context';
 import { signOutUser } from '../../utils/firebase/firebase.utils';
-const CartLogo = require('../../assets/cart-icon.png')
+import CartIcon from '../../components/cart-icon/cart-icon.component';
+import CartDropdown from '../../components/cart-dropdown/cart-dropdown.component';
 const Logo = require('../../assets/LOGO.png')
 
 
@@ -40,9 +41,10 @@ const Navigation = () => {
             }
             
             <Link className="nav-link" to="/cart">
-                <img src={CartLogo} alt="" height={30} width={30} />
+                <CartIcon/>
             </Link>
         </div>
+        <CartDropdown/>
       </div>
       <Outlet/>
     </Fragment>
