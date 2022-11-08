@@ -18,8 +18,8 @@
         "price" : "$250"
     },
     {
-        "id" : 3,
-        "name" : "Intel Core i7",
+        "id" : 4,
+        "name" : "Intel Core i9",
         "imageURL" : "https://m.media-amazon.com/images/I/61ZRFy6GZ4L._SL1280_.jpg",
         "price" : "$250"
     }

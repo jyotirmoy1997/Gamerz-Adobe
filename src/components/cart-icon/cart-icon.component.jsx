@@ -13,9 +13,7 @@ const CartIcon = () => {
 
 
     return(
-        <div className='cart-icon' onClick={
-            toggle
-        }>
+        <div className='cart-icon' onClick={toggle}>
             <img src={cartLogo} alt="" srcset="" />
             <span>0</span>
         </div>
