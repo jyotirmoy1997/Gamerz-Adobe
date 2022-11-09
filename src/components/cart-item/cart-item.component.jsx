@@ -1,11 +1,14 @@
 import './cart-item.component.css'
 
 const CartItem = ({cartItem}) => {
-    const {name, quantity} = cartItem
+    const {name, imageURL, price, quantity} = cartItem
     return(
-        <div>
-           <h4>{name}</h4>
-           <span>{quantity}</span>
+        <div className='cart-item-container'>
+           <img src={imageURL} alt="" />
+           <div className='item-details'>
+            <span className='name'>{name}</span>
+            <span className='price'>{quantity} x {price}</span>
+           </div>
         </div>
     )
 }
