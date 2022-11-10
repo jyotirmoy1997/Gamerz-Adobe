@@ -5,6 +5,7 @@ import SignInPage from './route/sign-in/sign-in-page.component';
 import Cart from './route/cart/cart.component';
 import Shop from './route/shop/shop.component';
 import Contact from './route/contact/contact.component';
+import CheckOut from './route/checkout/checkout.component';
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
         <Route path='/contact' element={<Contact/>}/>
         <Route path='/sign-in' element={<SignInPage/>}/>
         <Route path='/cart' element={<Cart/>}/>
+        <Route path='/checkout' element={<CheckOut/>}/>
       </Route>
     </Routes>
   );

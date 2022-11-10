@@ -18,11 +18,30 @@ const addCartItem = (cartItems, productToAdd) => {
 
 }
 
+const removeCartItem = (cartItems, productToRemove) => {
+    /* Here, we are checking if the product we want to add actually exists or not
+    If it exists, then we are getting the object reference in existing Cart Item */
+    const existingCartItem = cartItems.find((cartItem) => cartItem.id === productToRemove.id)
+
+    /* If the cart Item exists, then we need to check if its quantity is 1 or not.
+    If it is 1, then we need to remove the item from the cart */
+    if(existingCartItem.quantity === 1){
+        return cartItems.filter((cartItem) => cartItem.id !== productToRemove.id)
+    }
+
+    /* If the cartItem exists, then we are decrementing the quantity value */ 
+    return cartItems.map((cartItem) => (
+        cartItem.id === productToRemove.id ? {...cartItem, quantity : cartItem.quantity - 1} : cartItem
+    ));
+
+}
+
 export const CartContext = createContext({
     isCartOpen : false,
     setIsCartOpen : () => {},
     cartItems : [],
     addItemtoCart : () => {},
+    removeItemfromCart : () => {},
     cartCount : 0
 })
 
@@ -43,7 +62,11 @@ export const CartProvider = ({children}) => {
     const addItemtoCart = (productToAdd) => {
         setCartItems(addCartItem(cartItems, productToAdd))
     }
-    const value = {isCartOpen, setIsCartOpen, cartItems, addItemtoCart, cartCount}
+
+    const removeItemfromCart = (productToRemove) => {
+        setCartItems(removeCartItem(cartItems, productToRemove))
+    }
+    const value = {isCartOpen, setIsCartOpen, cartItems, addItemtoCart, cartCount, removeItemfromCart}
     return(
         <CartContext.Provider value={value}>{children}</CartContext.Provider>
     )
