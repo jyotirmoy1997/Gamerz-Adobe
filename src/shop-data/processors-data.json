@@ -3,24 +3,24 @@
         "id" : 1,
         "name" : "Intel Core i3",
         "imageURL" : "https://cdn.mdcomputers.in/image/cache/catalog/processor/intel/bx80684i39350kf/bx80684i39350kf-image-main-600x600.jpg",
-        "price" : "$120"
+        "price" : 120
     },
     {
         "id" : 2,
         "name" : "Intel Core i5",
         "imageURL" : "https://m.media-amazon.com/images/I/71709S6VMTL._SY450_.jpg",
-        "price" : "$180"
+        "price" : 180
     },
     {
         "id" : 3,
         "name" : "Intel Core i7",
         "imageURL" : "https://cdn.mdcomputers.in/image/cache/catalog/processor/intel/i7-10700k/i7-10700k-image-main-600x600.jpg",
-        "price" : "$250"
+        "price" : 250
     },
     {
         "id" : 4,
         "name" : "Intel Core i9",
         "imageURL" : "https://m.media-amazon.com/images/I/61ZRFy6GZ4L._SL1280_.jpg",
-        "price" : "$250"
+        "price" : 250
     }
 ]
