@@ -12,7 +12,9 @@ import {
   getFirestore, 
   doc, 
   setDoc, 
-  getDoc
+  getDoc, 
+  collection,
+  writeBatch
 } from "firebase/firestore"
 
 const firebaseConfig = {
@@ -39,6 +41,30 @@ export const signInWithGooglePopup = () => signInWithPopup(auth, provider)
 
 // 4. Setting Up our database
 export const db = getFirestore();
+
+// This function uploads all the JSON data into our Firestore database
+export const addCollectionandDocuments = async (collectionkey, objects) => {
+
+  // Creating a new Collection Object reference
+  const collectionRef = collection(db, collectionkey);
+
+  // Creating a new batch object. This object helps us in performing a transaction.
+  const batch = writeBatch(db);
+
+  objects.forEach((object) => {
+    // Creating a new document reference for every object
+    const docRef = doc(collection, object.title.toLowerCase());
+
+    // Setting new user doc reference in batch
+    batch.set(docRef, object);
+  })
+
+  /* Performing the transaction of data to firestore database
+   once the objects are appended to the document */
+  await batch.commit()
+  console.log("Done")
+}
+
 
 // 5. Creating a user reference in database from Authentication Token
 export const createUserFromAuth = async (userAuth, additionalInfo={}) => {
