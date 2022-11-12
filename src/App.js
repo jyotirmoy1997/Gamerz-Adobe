@@ -12,7 +12,8 @@ const App = () => {
     <Routes>
       <Route path='/' element={<Navigation/>}>
         <Route index={true} element={<Home/>}/>
-        <Route path='/shop' element={<Shop/>}/>
+        <Route path='/shop/*' element={<Shop/>}/> 
+        {/*  Indicates match any route after shop */}
         <Route path='/contact' element={<Contact/>}/>
         <Route path='/sign-in' element={<SignInPage/>}/>
         <Route path='/cart' element={<Cart/>}/>

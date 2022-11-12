@@ -3,14 +3,14 @@ import { useContext } from 'react'
 import { CartContext } from '../../contexts/cart.context'
 
 const CheckOutItem = ({cartItem}) => {
-    const {name, imageURL, price, quantity} = cartItem
+    const {name, imageUrl, price, quantity} = cartItem
     const {clearCartItem, addItemtoCart, removeItemfromCart} = useContext(CartContext)
     const addItemHandler = () => addItemtoCart(cartItem)
     const removeItemHandler = () => removeItemfromCart(cartItem)
     return(
         <div className='checkout-item-container'>
             <div className='image-container'>
-                <img src={imageURL} alt="" />
+                <img src={imageUrl} alt="" />
             </div>
             <span className='name'>{name}</span>
             <span className='quantity'>

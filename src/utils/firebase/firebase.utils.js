@@ -14,7 +14,9 @@ import {
   setDoc, 
   getDoc, 
   collection,
-  writeBatch
+  writeBatch,
+  query,
+  getDocs
 } from "firebase/firestore"
 
 const firebaseConfig = {
@@ -53,11 +55,14 @@ export const addCollectionandDocuments = async (collectionkey, objects) => {
 
   objects.forEach((object) => {
     // Creating a new document reference for every object
-    const docRef = doc(collection, object.title.toLowerCase());
+    const docRef = doc(collectionRef, object.title);
 
     // Setting new user doc reference in batch
     batch.set(docRef, object);
   })
+
+
+
 
   /* Performing the transaction of data to firestore database
    once the objects are appended to the document */
@@ -65,6 +70,26 @@ export const addCollectionandDocuments = async (collectionkey, objects) => {
   console.log("Done")
 }
 
+// This function fetches all the data from the firestore database
+export const getCollectionandDocuments = async () => {
+    // Creating a collection reference
+    const collectionRef = collection(db, 'categories')
+
+    // Creating a query object for performing operations on the collection reference
+    const q = query(collectionRef)
+
+    // Capturing a snapshot of the data. querySnapShot.docs returns an array
+    const querySnapShot = await getDocs(q);
+
+    // Building a new instance of the data we get from the firestore database
+    const categoryMap = querySnapShot.docs.reduce((acc, docSnapShot) => {
+      const {title, items} = docSnapShot.data();
+      acc[title.toLowerCase()] = items;
+      return acc;
+    }, {})
+
+    return categoryMap;
+}
 
 // 5. Creating a user reference in database from Authentication Token
 export const createUserFromAuth = async (userAuth, additionalInfo={}) => {
