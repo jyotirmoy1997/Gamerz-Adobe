@@ -1,6 +1,6 @@
 import { useContext } from 'react'
 import { CartContext } from '../../contexts/cart.context'
-import './cart-icon.component.css'
+import './cart-icon.styles.css'
 const cartLogo = require('../../assets/cart-icon.png')
 
 const CartIcon = () => {

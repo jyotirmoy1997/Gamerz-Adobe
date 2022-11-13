@@ -1,6 +1,6 @@
 import SignIn from "../../components/sign-in-form/sign-in-form.component"
 import SignUpForm from "../../components/sign-up-form/sign-up-form.component"
-import './sign-in-page.component.css'
+import './sign-in-page.styles.css'
 
 const SignInPage = () => {
     return(

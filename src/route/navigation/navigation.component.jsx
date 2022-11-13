@@ -14,7 +14,6 @@ const Logo = require('../../assets/LOGO.png')
 const Navigation = () => {
     const {currentUser, setCurrentUser} = useContext(UserContext)
     const {isCartOpen} = useContext(CartContext)
-    // console.log(currentUser)
 
     const signOutHandler = async () => {
         const res = await signOutUser();

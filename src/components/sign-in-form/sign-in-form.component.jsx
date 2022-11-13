@@ -6,9 +6,10 @@ import {
     signInAuthUserWithEmailandPassword
 } from "../../utils/firebase/firebase.utils";
 
-import './sign-in-form.component.css'
 import GoogleButton from 'react-google-button'
 import {useNavigate} from "react-router-dom";
+
+import './sign-in-form.styles.css'
 
 
 
