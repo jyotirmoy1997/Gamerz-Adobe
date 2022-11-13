@@ -222,6 +222,111 @@ const SHOP_DATA = [
       },
     ],
   },
+  {
+    title: 'Cooling Systems',
+    items: [
+      {
+        id: 36,
+        name: 'Aerocool Mirage L360 ARGB',
+        imageUrl: 'https://cdn.mdcomputers.in/image/cache/catalog/cpu%20cooler/aerocool/mirage-l360-argb-white/mirage-l360-argb-white-image-main-600x600.jpg',
+        price: 325,
+      },
+      {
+        id: 37,
+        name: 'Alseye M360 PLUS ARGB',
+        imageUrl: 'https://cdn.mdcomputers.in/image/cache/catalog/cpu%20cooler/alseye/m360-plus-argb-black/m360-plus-argb-black-image-main-600x600.jpg',
+        price: 20,
+      },
+      {
+        id: 38,
+        name: 'Antec Symphony 360 ARGB',
+        imageUrl: 'https://www.antec.com/product/cooling/images/gallery-symphony-360-argb-02.jpg',
+        price: 25,
+      },
+      {
+        id: 39,
+        name: 'Asus ROG Strix LC II 360 ARGB',
+        imageUrl: 'https://m.media-amazon.com/images/I/71E7Nnlt-JL._SL1500_.jpg',
+        price: 25,
+      },
+      {
+        id: 40,
+        name: 'Cooler Master Hyper H410R RGB',
+        imageUrl: 'https://m.media-amazon.com/images/I/71+QnNXvUSL._SY450_.jpg',
+        price: 40,
+      }
+    ],
+  },
+  {
+    title: 'Power Supply',
+    items: [
+      {
+        id: 41,
+        name: 'Corsair CX750M',
+        imageUrl: 'https://m.media-amazon.com/images/I/51HHEX9ENhL.jpg',
+        price: 325,
+      },
+      {
+        id: 42,
+        name: 'EVGA 850 BQ',
+        imageUrl: 'https://cdn.mdcomputers.in/image/cache/catalog/smps/evga/110-bq-0850-v1/110-bq-0850-v1-image-main-600x600.jpg',
+        price: 20,
+      },
+      {
+        id: 43,
+        name: 'Adata XPG Core Reactor 650',
+        imageUrl: 'https://techpc7.com/wp-content/uploads/2022/08/product_2250_1.png',
+        price: 25,
+      },
+      {
+        id: 44,
+        name: 'Asus ROG Strix 1000G',
+        imageUrl: 'https://rukminim1.flixcart.com/image/416/416/ko4ni4w0/psu/6/t/a/rog-strix-1000g-asus-original-imag2n9w5hu8zh6t.jpeg?q=70',
+        price: 25,
+      },
+      {
+        id: 45,
+        name: 'Asus ROG Thor 1200P2',
+        imageUrl: 'https://cdn.mdcomputers.in/image/cache/catalog/smps/asus/rog-thor-1200p2-gaming/rog-thor-1200p2-gaming-image-main-600x600.jpg',
+        price: 40,
+      }
+    ],
+  },
+  {
+    title: 'RAM',
+    items: [
+      {
+        id: 46,
+        name: 'Adata XPG Spectrix D60G 8GB',
+        imageUrl: 'https://m.media-amazon.com/images/I/51nt7V2HWAL._SL1061_.jpg',
+        price: 325,
+      },
+      {
+        id: 47,
+        name: 'Adata XPG Gammix D30 16GB',
+        imageUrl: 'https://m.media-amazon.com/images/I/710ak2j2wtL._SY450_.jpg',
+        price: 20,
+      },
+      {
+        id: 48,
+        name: 'Adata Spectrix D50 RGB 16GB',
+        imageUrl: 'https://cdn.mdcomputers.in/image/cache/catalog/memory/adata/ax4u3000716g16a-st50/ax4u3000716g16a-st50-image-main-600x600.jpg',
+        price: 25,
+      },
+      {
+        id: 49,
+        name: 'Adata XPG Gammix D20 8GB',
+        imageUrl: 'https://cdn.mdcomputers.in/image/cache/catalog/memory/adata/ax4u36008g18i--cbk20/ax4u36008g18i--cbk20--image--main-600x600.jpg',
+        price: 25,
+      },
+      {
+        id: 50,
+        name: 'Corsair Vengeance RGB RS 16GB',
+        imageUrl: 'https://cdn.mdcomputers.in/image/cache/catalog/memory/corsair/cmg16gx4m1e3200c16/corsair-vengeance-rgb-rs-series-16gb-ddr4-3200mhz-image-main-600x600.jpg',
+        price: 40,
+      }
+    ],
+  },
 ];
 
 export default SHOP_DATA

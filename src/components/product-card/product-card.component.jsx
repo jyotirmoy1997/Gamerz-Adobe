@@ -27,7 +27,7 @@ const ProductCard = ({product}) => {
                 <span>
                     {name}
                 </span>
-                <span>
+                <span className='price-tag'>
                     ${price}
                 </span>
             </div>

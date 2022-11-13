@@ -1,7 +1,8 @@
 .category-preview-container {
     display: flex;
     flex-direction: column;
-    margin: 2em auto; 
+    margin: 0 auto;
+    margin-bottom: 2em;
     width: 95%; 
   }
 

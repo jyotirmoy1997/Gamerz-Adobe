@@ -25,13 +25,14 @@
     position: absolute;
 }
 
-
-
-
 .product-card-container .product-card-footer{
     display: flex;
     justify-content: space-between;
     width: 90%;
     margin: 0 auto;
     font-size: 20px;
+}
+
+.product-card-container .product-card-footer .price-tag{
+    color: green;
 }
