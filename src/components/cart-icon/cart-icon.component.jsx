@@ -12,7 +12,7 @@ const CartIcon = () => {
     const toggle = () => setIsCartOpen(!isCartOpen)
 
 
-    console.log(cartCount)
+    // console.log(cartCount)
     return(
         <div className='cart-icon' onClick={toggle}>
             <img src={cartLogo} alt="" srcset="" />
