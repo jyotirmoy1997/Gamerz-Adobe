@@ -1,20 +1,29 @@
 import {Outlet, Link} from 'react-router-dom';
 import { Fragment, useContext} from 'react';
+import { useSelector } from 'react-redux';
 import './navigation.styles.css';
 import { UserContext } from '../../contexts/user.context';
 import { signOutUser } from '../../utils/firebase/firebase.utils';
 import CartIcon from '../../components/cart-icon/cart-icon.component';
 import CartDropdown from '../../components/cart-dropdown/cart-dropdown.component';
 import { CartContext } from '../../contexts/cart.context';
+import { setCurrentUser } from '../../store/user/user-action';
 
 
 const Logo = require('../../assets/LOGO.png')
 
 
 const Navigation = () => {
-    const {currentUser, setCurrentUser} = useContext(UserContext)
-    const {isCartOpen} = useContext(CartContext)
+    // const {currentUser, setCurrentUser} = useContext(UserContext)
 
+    // Replacing Context API with Redux
+    const currentUser = useSelector((state) => {
+        return state.user.currentUser
+    })
+
+
+    const {isCartOpen} = useContext(CartContext)
+    // console.log(currentUser)
     const signOutHandler = async () => {
         const res = await signOutUser();
         setCurrentUser(null);
