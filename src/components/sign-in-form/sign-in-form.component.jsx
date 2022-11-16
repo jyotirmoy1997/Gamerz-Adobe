@@ -1,5 +1,4 @@
 import { useState, useContext } from "react";
-import { UserContext } from "../../contexts/user.context";
 import { 
     signInWithGooglePopup, 
     createUserFromAuth ,
@@ -25,7 +24,6 @@ const SignIn = () => {
     }
     // console.log(UserProvider)
     const navigate = useNavigate();
-    const {setCurrentUser} = useContext(UserContext)
 
     // Here, we're using the useState Hook to update the Different Form Fields
     const [formFields, setFormFields] = useState(defaultFormField);
